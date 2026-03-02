@@ -11,7 +11,9 @@ int main() {
 
     int valid = 0, tidakValid = 0, lulus = 0;
     double total = 0;
-    double max1 = 0, max2 = 0;
+
+    double max1Nilai = -1, max2Nilai = -1;
+    string max1Nama = "", max2Nama = "";
 
     cout << "Nama\tNilai Akhir\tStatus\n";
 
@@ -30,12 +32,17 @@ int main() {
                 cout << nama[i] << "\t" << akhir << "\t\tLULUS\n";
                 lulus++;
 
-                if(akhir > max1) {
-                    max2 = max1;
-                    max1 = akhir;
+                // cari 2 tertinggi tanpa sorting
+                if(akhir > max1Nilai) {
+                    max2Nilai = max1Nilai;
+                    max2Nama = max1Nama;
+
+                    max1Nilai = akhir;
+                    max1Nama = nama[i];
                 }
-                else if(akhir > max2 && akhir != max1) {
-                    max2 = akhir;
+                else if(akhir > max2Nilai && akhir != max1Nilai) {
+                    max2Nilai = akhir;
+                    max2Nama = nama[i];
                 }
             }
             else {
@@ -50,8 +57,9 @@ int main() {
     cout << "Jumlah Tidak Valid: " << tidakValid << endl;
     cout << "Jumlah Lulus: " << lulus << endl;
     cout << "Rata-rata: " << rata << endl;
-    cout << "Top 1: " << max1 << endl;
-    cout << "Top 2: " << max2 << endl;
+
+    cout << "Top 1: " << max1Nama << " (" << max1Nilai << ")" << endl;
+    cout << "Top 2: " << max2Nama << " (" << max2Nilai << ")" << endl;
 
     return 0;
 }

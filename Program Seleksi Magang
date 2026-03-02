@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    string nama[12] = {"Andi","Bunga","Citra","Dimas","Eka","Farhan",
+                       "Gita","Hendra","Intan","Joko","Karin","Luthfi"};
+
+    double tes[12] = {82,90,70,85,92,68,88,76,95,60,89,73};
+    double wawan[12] = {78,88,75,60,95,72,84,70,90,65,91,80};
+
+    int valid = 0, tidakValid = 0, lulus = 0;
+    double total = 0;
+    double max1 = -1, max2 = -1;
+
+    cout << "Nama\tNilai Akhir\tStatus\n";
+
+    for(int i = 0; i < 12; i++) {
+
+        if(tes[i] < 0 || tes[i] > 100 || wawan[i] < 0 || wawan[i] > 100) {
+            cout << nama[i] << "\t-\t\tDATA TIDAK VALID\n";
+            tidakValid++;
+        }
+        else {
+            double akhir = 0.6 * tes[i] + 0.4 * wawan[i];
+            valid++;
+            total += akhir;
+
+            if(akhir >= 75) {
+                cout << nama[i] << "\t" << akhir << "\t\tLULUS\n";
+                lulus++;
+
+                if(akhir > max1) {
+                    max2 = max1;
+                    max1 = akhir;
+                }
+                else if(akhir > max2 && akhir != max1) {
+                    max2 = akhir;
+                }
+            }
+            else {
+                cout << nama[i] << "\t" << akhir << "\t\tTIDAK LULUS\n";
+            }
+        }
+    }
+
+    double rata = total / valid;
+
+    cout << "\nJumlah Valid: " << valid << endl;
+    cout << "Jumlah Tidak Valid: " << tidakValid << endl;
+    cout << "Jumlah Lulus: " << lulus << endl;
+    cout << "Rata-rata: " << rata << endl;
+    cout << "Top 1: " << max1 << endl;
+    cout << "Top 2: " << max2 << endl;
+
+    return 0;
+}

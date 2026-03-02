@@ -11,7 +11,7 @@ int main() {
 
     int valid = 0, tidakValid = 0, lulus = 0;
     double total = 0;
-    double max1 = -1, max2 = -1;
+    double max1 = 0, max2 = 0;
 
     cout << "Nama\tNilai Akhir\tStatus\n";
 

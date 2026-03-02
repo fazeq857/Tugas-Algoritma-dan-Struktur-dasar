@@ -1,5 +1,9 @@
 // Fatih Muhammad Fawwaz
 // NIM : D121251020
+// Tugas Algoritma & Struktur Data
+// Case Study: Sistem Seleksi & Pemeringkatan Peserta Magang
+
+
 #include <iostream>
 using namespace std;
 

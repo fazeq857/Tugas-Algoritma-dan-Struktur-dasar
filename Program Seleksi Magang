@@ -18,7 +18,7 @@ int main() {
     int valid = 0, tidakValid = 0, lulus = 0;
     double total = 0;
 
-    double max1Nilai = -1, max2Nilai = -1;
+    double max1Nilai = 0, max2Nilai = 0;
     string max1Nama = "", max2Nama = "";
 
     cout << "Nama\tNilai Akhir\tStatus\n";
@@ -38,7 +38,6 @@ int main() {
                 cout << nama[i] << "\t" << akhir << "\t\tLULUS\n";
                 lulus++;
 
-                // cari 2 tertinggi tanpa sorting
                 if(akhir > max1Nilai) {
                     max2Nilai = max1Nilai;
                     max2Nama = max1Nama;

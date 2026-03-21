@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t > 0) {
+        int m, n;
+        cin >> m >> n;
+
+        vector<int> cost(n);
+
+        for (int i = 0; i < n; i++) {
+            cin >> cost[i];
+        }
+
+        bool found = false;
+
+        int i = 0;
+        while (i < n && !found) {
+            int j = i + 1;
+
+            while (j < n) {
+                if (cost[i] + cost[j] == m) {
+                    cout << i + 1 << " " << j + 1 << endl;
+                    found = true;
+                    break;
+                }
+                j++;
+            }
+
+            i++;
+        }
+
+        t--;
+    }
+
+    return 0;
+}
